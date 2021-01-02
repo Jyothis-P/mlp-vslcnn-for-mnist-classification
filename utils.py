@@ -10,11 +10,11 @@ def get_data():
     return (x_train, y_train), (x_test, y_test)
 
 
-def plot_learning_curve(history, epochs):
+def plot_learning_curve(history, epochs, title='Model Accuracy'):
     epoch_range = range(1, epochs + 1)
     plt.plot(epoch_range, history['accuracy'])
     plt.plot(epoch_range, history['val_accuracy'])
-    plt.title("Model Accuracy")
+    plt.title(title)
     plt.ylabel("Accuracy")
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Val'], loc='lower right')

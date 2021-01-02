@@ -36,4 +36,4 @@ def classify_with_cnn(data):
 
     hist = cnn_model.fit(x_train, y_train, batch_size=64, epochs=10, verbose=1, validation_data=(x_test, y_test))
 
-    return hist.history
+    return {'accuracy': hist.history['acc'], 'val_accuracy': hist.history['val_acc']}
